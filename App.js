@@ -8,8 +8,9 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Perfil nombre="Hernandez Cruz Hector Josue " carrera="Ingeniería en Sistemas Computacionales" materia="Programación Móvil" cuatrimestre="9" />
-      <Perfil nombre="Jonathan Carbajal Reyes" carrera="Ingeniería en Sistemas Computacionales" materia="Programación Movil" cuatrimestre="9" />
+      <Perfil style={styles.tarjetaVerde} nombre="Hernandez Cruz Hector Josue " carrera="Ingeniería en Sistemas Computacionales" materia="Programación Móvil" cuatrimestre="9" />
+      <Perfil style={styles.tarjetaRoja} nombre="Jonathan Carbajal Reyes" carrera="Ingeniería en Sistemas Computacionales" materia="Programación Movil" cuatrimestre="9" />
+      <Perfil style={styles.tarjetaRoja} nombre="Jonathan Carbajal Reyes" carrera="Ingeniería en Sistemas Computacionales" materia="Programación Movil" cuatrimestre="9" />
 
       <StatusBar style="auto" />
     </View>
@@ -23,5 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row',
   },
+
+  tarjetaVerde:{backgroundColor: 'green',},
+  tarjetaRoja:{backgroundColor: 'red',},
+
 });
