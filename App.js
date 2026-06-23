@@ -1,23 +1,37 @@
-import { StyleSheet } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import MenuScreen from './Screens/MenuScreen';
+import { useState } from 'react';
+import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
+
+  const [tareas, setTareas] = useState([
+    'Ir al gimnasio',
+    'Asistir a clases',
+    'Pasar lista en el charlees',
+    'Ver a la novia',
+    'Dormir temprano'
+  ]);
+
+  const agregarTarea = () => {
+    setTareas([...tareas, `Nueva tarea ${tareas.length + 1}`]);
+  };
+
   return (
-    <SafeAreaProvider>
-      <MenuScreen></MenuScreen>
-    </SafeAreaProvider>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Button title="Agregar tarea" onPress={agregarTarea} />
+
+      <ScrollView contentContainerStyle={{ padding: 30 }}>
+        {tareas.map((tarea, index) => (
+          <View
+            key={index}
+            style={{
+              marginBottom: 10,
+              padding: 15,
+              backgroundColor: '#ddd'
+            }}>
+            <Text>{tarea}</Text>
+          </View>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-
-    backgroundColor: '#f35858',
-
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-  },
-});
