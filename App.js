@@ -8,7 +8,7 @@ export default function App() {
     'Asistir a clases',
     'Pasar lista en el charlees',
     'Ver a la novia',
-    'Dormir temprano'
+    'Dormir '
   ]);
 
   const agregarTarea = () => {
