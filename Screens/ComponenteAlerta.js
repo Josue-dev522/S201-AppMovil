@@ -27,7 +27,7 @@ if (Platform.OS === "web") {
   };
 }
 // Componente para mostrar alertas con dos o tres botones
-const ComponenteAlert = () => {
+const ComponenteAlert = () => { 
   const [message, setMessage] = useState('Sin acción');
 
   const createTwoButtonAlert = () =>
@@ -35,7 +35,7 @@ const ComponenteAlert = () => {
       {
         text: 'Cancelar',
         onPress: () => {
-          //console.log('Presiona cancelar');
+          //console.log('Presiona cancelar'); 
           setMessage('Presionaste cancelar');
         },
         style: 'cancel',
